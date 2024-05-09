@@ -1,0 +1,16 @@
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+    return quick_sort(left) + middle + quick_sort(right)
+
+# Take input from the user
+input_str = input("Enter the elements of the array separated by spaces: ")
+arr = list(map(int, input_str.split()))
+
+# Sort the array using quick sort
+sorted_arr = quick_sort(arr)
+print("Sorted array:", sorted_arr)
